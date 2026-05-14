@@ -1,0 +1,318 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Resume Builder System</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans scroll-smooth"><!-- Navbar --><nav class="bg-blue-700 text-white p-4 sticky top-0 z-50 shadow-lg">
+  <div class="container mx-auto flex justify-between items-center">
+    <h1 class="text-2xl font-bold">AI Resume Builder</h1><ul class="flex gap-6 text-lg">
+  <li><a href="#home" class="hover:text-yellow-300">Home</a></li>
+  <li><a href="#features" class="hover:text-yellow-300">Features</a></li>
+  <li><a href="#dashboard" class="hover:text-yellow-300">Dashboard</a></li>
+  <li><a href="#jobs" class="hover:text-yellow-300">Jobs</a></li>
+  <li><a href="#contact" class="hover:text-yellow-300">Contact</a></li>
+</ul>
+
+  </div>
+</nav><!-- Hero Section --><section id="home" class="bg-white py-20">
+  <div class="container mx-auto text-center px-6">
+    <h2 class="text-5xl font-bold text-gray-800 mb-6">
+      Build Smart ATS-Friendly Resumes with AI
+    </h2><p class="text-lg text-gray-600 mb-8 max-w-3xl mx-auto">
+  Create professional resumes, get AI-powered suggestions, generate cover letters,
+  and receive personalized job recommendations instantly.
+</p>
+
+<div class="flex justify-center gap-5 flex-wrap">
+  <button onclick="showLogin()"
+    class="bg-blue-700 hover:bg-blue-800 text-white px-8 py-3 rounded-xl text-lg shadow-lg transition">
+    Login
+  </button>
+
+  <button onclick="showRegister()"
+    class="bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-xl text-lg shadow-lg transition">
+    Register
+  </button>
+</div>
+
+  </div>
+</section><!-- Features --><section id="features" class="py-20 bg-gray-100">
+  <div class="container mx-auto px-6"><h2 class="text-4xl font-bold text-center text-gray-800 mb-14">
+  Powerful Features
+</h2>
+
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+  <div onclick="openFeature('AI Resume Suggestions')"
+    class="bg-white p-8 rounded-2xl shadow-lg cursor-pointer hover:scale-105 transition duration-300">
+    <h3 class="text-2xl font-bold text-blue-700 mb-4">AI Resume Suggestions</h3>
+    <p class="text-gray-600">
+      Improve your resume using AI-powered keyword optimization.
+    </p>
+  </div>
+
+  <div onclick="openFeature('Job Matching')"
+    class="bg-white p-8 rounded-2xl shadow-lg cursor-pointer hover:scale-105 transition duration-300">
+    <h3 class="text-2xl font-bold text-blue-700 mb-4">Job Matching</h3>
+    <p class="text-gray-600">
+      Get personalized job recommendations based on your skills.
+    </p>
+  </div>
+
+  <div onclick="openFeature('Resume Templates')"
+    class="bg-white p-8 rounded-2xl shadow-lg cursor-pointer hover:scale-105 transition duration-300">
+    <h3 class="text-2xl font-bold text-blue-700 mb-4">Resume Templates</h3>
+    <p class="text-gray-600">
+      Select from multiple ATS-friendly professional templates.
+    </p>
+  </div>
+
+  <div onclick="openFeature('AI Cover Letter')"
+    class="bg-white p-8 rounded-2xl shadow-lg cursor-pointer hover:scale-105 transition duration-300">
+    <h3 class="text-2xl font-bold text-blue-700 mb-4">AI Cover Letter</h3>
+    <p class="text-gray-600">
+      Generate customized cover letters instantly using AI.
+    </p>
+  </div>
+
+  <div onclick="openFeature('Analytics Dashboard')"
+    class="bg-white p-8 rounded-2xl shadow-lg cursor-pointer hover:scale-105 transition duration-300">
+    <h3 class="text-2xl font-bold text-blue-700 mb-4">Analytics Dashboard</h3>
+    <p class="text-gray-600">
+      View resume score, skill demand and application analytics.
+    </p>
+  </div>
+
+  <div onclick="openFeature('Secure Authentication')"
+    class="bg-white p-8 rounded-2xl shadow-lg cursor-pointer hover:scale-105 transition duration-300">
+    <h3 class="text-2xl font-bold text-blue-700 mb-4">Secure Authentication</h3>
+    <p class="text-gray-600">
+      Login and register securely with encrypted passwords.
+    </p>
+  </div>
+
+</div>
+
+  </div>
+</section><!-- Resume Builder --><section class="bg-white py-20">
+  <div class="container mx-auto px-6 max-w-4xl"><h2 class="text-4xl font-bold text-center text-gray-800 mb-12">
+  Create Resume
+</h2>
+
+<form class="bg-gray-100 p-10 rounded-3xl shadow-lg space-y-6">
+
+  <div>
+    <label class="text-lg font-semibold block mb-2">Full Name</label>
+    <input type="text" placeholder="Enter your name"
+      class="w-full p-4 rounded-xl border border-gray-300 focus:ring-2 focus:ring-blue-500 outline-none">
+  </div>
+
+  <div>
+    <label class="text-lg font-semibold block mb-2">Email</label>
+    <input type="email" placeholder="Enter your email"
+      class="w-full p-4 rounded-xl border border-gray-300 focus:ring-2 focus:ring-blue-500 outline-none">
+  </div>
+
+  <div>
+    <label class="text-lg font-semibold block mb-2">Skills</label>
+    <textarea rows="4" placeholder="HTML, CSS, JavaScript, React"
+      class="w-full p-4 rounded-xl border border-gray-300 focus:ring-2 focus:ring-blue-500 outline-none"></textarea>
+  </div>
+
+  <div>
+    <label class="text-lg font-semibold block mb-2">Experience</label>
+    <textarea rows="4" placeholder="Describe your experience"
+      class="w-full p-4 rounded-xl border border-gray-300 focus:ring-2 focus:ring-blue-500 outline-none"></textarea>
+  </div>
+
+  <div class="flex gap-4 flex-wrap">
+    <button type="button"
+      class="bg-blue-700 hover:bg-blue-800 text-white px-8 py-3 rounded-xl shadow-lg">
+      Generate Resume
+    </button>
+
+    <button type="button"
+      class="bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-xl shadow-lg">
+      Download PDF
+    </button>
+  </div>
+
+</form>
+
+  </div>
+</section><!-- Dashboard --><section id="dashboard" class="py-20 bg-gray-100">
+  <div class="container mx-auto px-6"><h2 class="text-4xl font-bold text-center text-gray-800 mb-14">
+  User Dashboard
+</h2>
+
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+  <div class="bg-white p-8 rounded-3xl shadow-lg text-center">
+    <h3 class="text-3xl font-bold text-blue-700">92%</h3>
+    <p class="text-gray-600 mt-3 text-lg">ATS Resume Score</p>
+  </div>
+
+  <div class="bg-white p-8 rounded-3xl shadow-lg text-center">
+    <h3 class="text-3xl font-bold text-green-600">15</h3>
+    <p class="text-gray-600 mt-3 text-lg">Jobs Applied</p>
+  </div>
+
+  <div class="bg-white p-8 rounded-3xl shadow-lg text-center">
+    <h3 class="text-3xl font-bold text-purple-600">8</h3>
+    <p class="text-gray-600 mt-3 text-lg">Interview Calls</p>
+  </div>
+
+</div>
+
+  </div>
+</section><!-- Job Section --><section id="jobs" class="bg-white py-20">
+  <div class="container mx-auto px-6"><h2 class="text-4xl font-bold text-center text-gray-800 mb-14">
+  Recommended Jobs
+</h2>
+
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+  <div class="bg-gray-100 p-8 rounded-3xl shadow-lg hover:shadow-2xl transition">
+    <h3 class="text-2xl font-bold text-blue-700 mb-3">Frontend Developer</h3>
+    <p class="text-gray-600 mb-2">Company: Tech Solutions</p>
+    <p class="text-green-600 font-bold mb-4">Match Score: 89%</p>
+    <button class="bg-blue-700 text-white px-5 py-3 rounded-xl hover:bg-blue-800">
+      Apply Now
+    </button>
+  </div>
+
+  <div class="bg-gray-100 p-8 rounded-3xl shadow-lg hover:shadow-2xl transition">
+    <h3 class="text-2xl font-bold text-blue-700 mb-3">Backend Developer</h3>
+    <p class="text-gray-600 mb-2">Company: Cloud Systems</p>
+    <p class="text-green-600 font-bold mb-4">Match Score: 85%</p>
+    <button class="bg-blue-700 text-white px-5 py-3 rounded-xl hover:bg-blue-800">
+      Apply Now
+    </button>
+  </div>
+
+  <div class="bg-gray-100 p-8 rounded-3xl shadow-lg hover:shadow-2xl transition">
+    <h3 class="text-2xl font-bold text-blue-700 mb-3">Full Stack Engineer</h3>
+    <p class="text-gray-600 mb-2">Company: NextGen Pvt Ltd</p>
+    <p class="text-green-600 font-bold mb-4">Match Score: 93%</p>
+    <button class="bg-blue-700 text-white px-5 py-3 rounded-xl hover:bg-blue-800">
+      Apply Now
+    </button>
+  </div>
+
+</div>
+
+  </div>
+</section><!-- Login Modal --><div id="loginModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
+  <div class="bg-white p-10 rounded-3xl w-96 shadow-2xl relative"><button onclick="closeModal()"
+  class="absolute top-3 right-5 text-2xl font-bold text-red-500">×</button>
+
+<h2 class="text-3xl font-bold text-center text-blue-700 mb-8">Login</h2>
+
+<input type="email" placeholder="Email"
+  class="w-full p-3 border rounded-xl mb-4">
+
+<input type="password" placeholder="Password"
+  class="w-full p-3 border rounded-xl mb-6">
+
+<button class="w-full bg-blue-700 text-white py-3 rounded-xl hover:bg-blue-800">
+  Login
+</button>
+
+  </div>
+</div><!-- Register Modal --><div id="registerModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
+  <div class="bg-white p-10 rounded-3xl w-96 shadow-2xl relative"><button onclick="closeModal()"
+  class="absolute top-3 right-5 text-2xl font-bold text-red-500">×</button>
+
+<h2 class="text-3xl font-bold text-center text-green-600 mb-8">Register</h2>
+
+<input type="text" placeholder="Full Name"
+  class="w-full p-3 border rounded-xl mb-4">
+
+<input type="email" placeholder="Email"
+  class="w-full p-3 border rounded-xl mb-4">
+
+<input type="password" placeholder="Password"
+  class="w-full p-3 border rounded-xl mb-6">
+
+<button class="w-full bg-green-600 text-white py-3 rounded-xl hover:bg-green-700">
+  Register
+</button>
+
+  </div>
+</div><!-- Feature Popup --><div id="featurePopup" class="hidden fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
+  <div class="bg-white p-10 rounded-3xl w-[500px] shadow-2xl relative text-center"><button onclick="closeFeature()"
+  class="absolute top-3 right-5 text-2xl font-bold text-red-500">×</button>
+
+<h2 id="featureTitle" class="text-3xl font-bold text-blue-700 mb-5"></h2>
+
+<p class="text-gray-600 text-lg">
+  This feature uses advanced AI technology to improve user experience and provide smart career guidance.
+</p>
+
+  </div>
+</div><!-- Footer --><footer id="contact" class="bg-blue-700 text-white py-8">
+  <div class="container mx-auto text-center">
+    <h2 class="text-2xl font-bold mb-3">AI Resume Builder</h2>
+    <p class="text-lg">Final Year Full Stack + AI Project</p>
+    <p class="mt-3">Developed by: team</p>
+    <p class="mt-2">Contact: 1234567890</p>
+    <p class="mt-3">© 2026 All Rights Reserved</p>
+  </div>
+</footer><!-- JavaScript --><script>
+
+function showLogin() {
+  document.getElementById('loginModal').classList.remove('hidden');
+}
+
+function showRegister() {
+  document.getElementById('registerModal').classList.remove('hidden');
+}
+
+function closeModal() {
+  document.getElementById('loginModal').classList.add('hidden');
+  document.getElementById('registerModal').classList.add('hidden');
+}
+
+function openFeature(featureName) {
+
+  let featureDescription = "";
+
+  if(featureName === 'AI Resume Suggestions') {
+    featureDescription = 'This feature analyzes your resume and gives AI-powered suggestions to improve skills, keywords, ATS score, and resume summary.';
+  }
+
+  else if(featureName === 'Job Matching') {
+    featureDescription = 'The system compares your skills with job requirements and shows personalized job recommendations with match percentage.';
+  }
+
+  else if(featureName === 'Resume Templates') {
+    featureDescription = 'Users can select modern ATS-friendly resume templates and download resumes in professional PDF format.';
+  }
+
+  else if(featureName === 'AI Cover Letter') {
+    featureDescription = 'Generate professional cover letters automatically using AI based on selected job roles and skills.';
+  }
+
+  else if(featureName === 'Analytics Dashboard') {
+    featureDescription = 'Dashboard displays ATS score, interview statistics, applied jobs, and skill demand analytics visually.';
+  }
+
+  else if(featureName === 'Secure Authentication') {
+    featureDescription = 'Users can securely register and login with encrypted passwords and protected authentication system.';
+  }
+
+  document.getElementById('featureTitle').innerText = featureName;
+
+  document.querySelector('#featurePopup p').innerText = featureDescription;
+
+  document.getElementById('featurePopup').classList.remove('hidden');
+}
+
+function closeFeature() {
+  document.getElementById('featurePopup').classList.add('hidden');
+}
+
+</script></body>
+</html>
